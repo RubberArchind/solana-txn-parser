@@ -26,7 +26,9 @@
   },
   "typesVersions": {
     "*": {
-      "*": ["dist/types/*"]
+      "*": [
+        "dist/types/*"
+      ]
     }
   },
   "jest": {
@@ -60,6 +62,8 @@
   "license": "MIT",
   "description": "lightweight transaction parser for popular DeFi applications on the Solana blockchain, written in TypeScript.",
   "dependencies": {
+    "@coral-xyz/anchor": "^0.31.0",
+    "@jup-ag/instruction-parser": "github:RubberArchind/instruction-parser#dist",
     "@noble/hashes": "^1.5.0",
     "@solana/web3.js": "^1.95.3",
     "bs58": "^6.0.0"

@@ -29,6 +29,7 @@ describe('Raydium Parser', () => {
 
     test('parse should correctly identify swap action [base in]', async () => {
         const result = await parser.parse(swapBaseInTransaction);
+        console.dir(result,{depth:99})
         expect(result?.platform).toEqual('raydiumv4');
         expect(result?.actions.length).toEqual(5);
         for (const action of result?.actions || []) {

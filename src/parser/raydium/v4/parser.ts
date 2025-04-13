@@ -1,6 +1,7 @@
 import { Connection, ParsedTransactionWithMeta, PublicKey } from '@solana/web3.js';
 import { AsyncBaseParser } from '../../../core/base';
 import { LRUCache } from '../../../core/lru';
+import { serializePublicKeys } from '../../../utils/serialize';
 import {
     ActionType,
     DEPOSIT_LOG_TYPE,
@@ -240,7 +241,7 @@ export class RaydiumV4Parser implements AsyncBaseParser<RaydiumV4Transaction> {
                     continue;
             }
         }
-        return result;
+        return serializePublicKeys(result);
     }
 
     async parseMultiple(

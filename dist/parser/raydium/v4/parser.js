@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.RaydiumV4Parser = void 0;
 const web3_js_1 = require("@solana/web3.js");
 const lru_1 = require("../../../core/lru");
+const serialize_1 = require("../../../utils/serialize");
 const types_1 = require("./types");
 const layout_1 = require("./layout");
 const utils_1 = require("../../../core/utils");
@@ -208,7 +209,7 @@ class RaydiumV4Parser {
                     continue;
             }
         }
-        return result;
+        return (0, serialize_1.serializePublicKeys)(result);
     }
     async parseMultiple(transactions) {
         return (await Promise.all(transactions.map(async (txn) => {
