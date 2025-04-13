@@ -16,4 +16,5 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./parser/pumpfun"), exports);
 __exportStar(require("./parser/raydium"), exports);
+__exportStar(require("./parser/jupiter"), exports);
 //# sourceMappingURL=index.js.map
