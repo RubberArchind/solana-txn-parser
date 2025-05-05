@@ -51,6 +51,9 @@ export class JupiterParser implements AsyncBaseParser<JupiterTransaction> {
                     type: "swap",
                     info: {
                         user: new PublicKey(result.owner),
+                        timestamp: tx.blockTime
+                            ? new Date(tx.blockTime * 1000).toISOString()
+                            : new Date(0).toISOString(),
                         tokenIn: new PublicKey(result.inMint),
                         tokenOut: new PublicKey(result.outMint),
                         amountIn,

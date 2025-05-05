@@ -38,6 +38,9 @@ class JupiterParser {
                     type: "swap",
                     info: {
                         user: new web3_js_1.PublicKey(result.owner),
+                        timestamp: tx.blockTime
+                            ? new Date(tx.blockTime * 1000).toISOString()
+                            : new Date(0).toISOString(),
                         tokenIn: new web3_js_1.PublicKey(result.inMint),
                         tokenOut: new web3_js_1.PublicKey(result.outMint),
                         amountIn,

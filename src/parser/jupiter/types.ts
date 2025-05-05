@@ -8,6 +8,7 @@ import { ParsedTransactionWithMeta, PublicKey } from "@solana/web3.js";
 export interface JupiterAction extends BaseParsedAction {
     info: {
         user: PublicKey;
+        timestamp: string;
         tokenIn: PublicKey;
         tokenOut: PublicKey;
         amountIn: bigint;
